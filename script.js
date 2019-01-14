@@ -57,11 +57,11 @@ root = new Vue({
 			root.$forceUpdate();
 		},
 		deleteMessage: function(a){
-			_.remove(root.allMessages, {
-				"time": a
-			});
 			var ref = firebase.database().ref('nMessages/' + a);
 			ref.remove().then(function() {
+				_.remove(root.allMessages, {
+					"time": a
+				});
 				root.nUpdate();
 			}).catch(function(error) {
 				alert("Remove failed: " + error.message);
