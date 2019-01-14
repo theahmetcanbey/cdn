@@ -1,1 +1,39 @@
-test 1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>Commutate</title>
+	<script src="cr.js"></script>
+	<script src="vue.min.js"></script>
+	<script src="lodash.min.js"></script>
+	<script src="firebase.js"></script>
+	<script src="date.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="root">
+		<div class="message-row" v-if="!users.length">
+			<input type="password" v-model="password">
+			<input type="button" value="Get Database" @click="get(password)">
+		</div>
+		<div class="message-row" v-if="users.length">
+			<select v-model="selectedUser">
+				<option class="message-row" v-for="user in users">
+					{{user}}
+				</option>
+			</select>
+		</div>
+		<div class="message-row" v-for="message in messages" :class="{'me': message.from == 'ben'}" :id="message.time">
+			<div class="name">{{message.from == "ben" ? "ahmetcanbey" : message.from}}: </div>
+			<div class="message" v-html="message.message"></div>
+			<div class="time">
+				{{date('Y-m-d H:i:s', message.time / 1000)}}
+				<button @click="deleteMessage(message.time)">Delete</button>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>

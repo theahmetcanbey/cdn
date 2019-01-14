@@ -1,0 +1,45 @@
+body{
+    background-color: #112233;
+    font: 13px arial;
+    margin: 4px auto;
+    padding: 4px;
+}
+.message-row{
+    background-color: #001122;
+    width: 95%;
+    border: 1px solid #000011;
+    padding: 4px;
+    margin: 4px;
+    color: #fff;
+}
+.message-row .name, .message-row .message{
+    display: inline-block;
+}
+.message-row .time{
+    display: inline-block;
+    float: right;
+}
+.clear{
+    clear: both;
+}
+.me{
+    background-color: #223344;
+    border: 1px solid #334455;
+}
+a{
+    color: #fff;
+    text-decoration: none;
+}
+input,
+select,
+input[type="button"], button, input[type="button"]:active, button:active{
+    background-color: #000011;
+    border: 1px solid #000022;
+    color: #fff;
+    padding: 4px;
+    font-weight: bold;
+}
+input[type="button"]:hover, button:hover, input[type="button"]:focus, button:focus{
+    background-color: #000033;
+    border: 1px solid #000044;
+}
