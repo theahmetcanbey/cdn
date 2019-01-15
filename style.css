@@ -33,13 +33,13 @@ a{
 input,
 select,
 input[type="button"], button, input[type="button"]:active, button:active{
-    background-color: #000011;
-    border: 1px solid #000022;
+    background-color: #223344;
+    border: 1px solid #223377;
     color: #fff;
     padding: 4px;
     font-weight: bold;
 }
 input[type="button"]:hover, button:hover, input[type="button"]:focus, button:focus{
-    background-color: #000033;
-    border: 1px solid #000044;
+    background-color: #223344;
+    border: 1px solid #224477;
 }
