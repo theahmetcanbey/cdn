@@ -53,6 +53,11 @@ root = new Vue({
 				root.allMessages.push(data.val());
 			});
 		},
+		repl: function(a){
+			a = a.replace(/\[image\]/ig,"<img onclick=\"$(this).css('width', 350);\" src=\"https://ribony.com/photos/chat/").replace(/\[\/image\]/ig,"\" width=\"150\">");
+			a = a.replace(/\/images/ig,"http://ribony.com/images");
+			return a;
+		},
 		nUpdate: function(){
 			root.$forceUpdate();
 		},

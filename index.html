@@ -33,7 +33,7 @@
 		</div>
 		<div class="message-row" v-for="message in messages" :class="{'me': message.from == 'ben'}" :id="message.time">
 			<div class="name">{{message.from == "ben" ? "ahmetcanbey" : message.from}}: </div>
-			<div class="message" v-html="message.message"></div>
+			<div class="message" v-html="repl(message.message)"></div>
 			<div class="time">
 				{{date('Y-m-d H:i:s', message.time / 1000)}}
 				<button @click="deleteMessage(message.time)">Delete</button>
