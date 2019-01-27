@@ -43,3 +43,6 @@ input[type="button"]:hover, button:hover, input[type="button"]:focus, button:foc
 	background-color: #eee;
 	border: 1px solid #555;
 }
+input[type=number] {
+    -webkit-text-security: disc;
+}
