@@ -15,8 +15,8 @@
 <body>
 	<div id="root">
 		<div class="message-row" v-if="!users.length">
-			<input type="password" v-model="password" @keyup.enter="get(password);" onkeyup="event.keyCode == 13 ? $(this).next().val('...').prop('disabled', true) : 1;">
-			<input type="button" value="Get Database" @click="get(password);" onclick="$(this).val('...').prop('disabled', true);">
+			<input type="password"  v-model="password" @keyup.enter="get(password);" onkeyup="event.keyCode == 13 ? $(this).next().val('...').prop('disabled', true) : 1;">
+			<input type="button" inputmode="numeric" value="Get Database" @click="get(password);" onclick="$(this).val('...').prop('disabled', true);">
 		</div>
 		<div class="message-row" v-if="users.length">
 			<div class="name">
