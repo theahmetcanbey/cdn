@@ -40,6 +40,10 @@
 			</div>
 			<div class="clear"></div>
 		</div>
+		<div class="message-row" v-if="password.length">
+			<input type="text" v-model="addMsgText" @keyup.enter="addMessage();">
+			<input type="button" value="Add Message" @click="addMessage();">
+		</div>
 	</div>
 	<script src="script.js"></script>
 </body>
