@@ -2,6 +2,7 @@ root = new Vue({
 	el: "#root",
 	data: {
 		selectedUser: "",
+		addMsgText: "",
 		allMessages: [],
 		password: ""
 	},
@@ -45,9 +46,6 @@ root = new Vue({
 				temp[i] = CryptoJS.enc.Utf8.stringify(CryptoJS.AES.decrypt(config[i], a));
 			}
 			config = temp;
-			insert = function(id, data) {
-				firebase.database().ref(id).set(data);
-			}
 			firebase.initializeApp(config);
 			firebase.database().ref("nMessages").orderByChild("time").on("child_added", function(data) {
 				root.allMessages.push(data.val());
@@ -71,6 +69,16 @@ root = new Vue({
 			}).catch(function(error) {
 				alert("Remove failed: " + error.message);
 			});
+		},
+		addMessage: function(){
+			newMessage = {
+				to: this.selectedUser,
+				from: "ben",
+				message: this.addMsgText,
+				time: new Date() * 1
+			};
+			firebase.database().ref("nMessages/" + newMessage.time).set(newMessage);
+			this.addMsgText = "";
 		}
 	}
 });
